@@ -572,7 +572,7 @@ plt.show()
 ```
 
 
-![png](Pyber Ride Sharing Data.png)
+![png](Ride_Sharing_Data.png)
 
 
 ## Total Fares by City Type ##
@@ -606,7 +606,7 @@ plt.show()
 ```
 
 
-![png](% of Total Fares by City Type.png)
+![png](Total_Fares.png)
 
 
 ## Total Rides by City Type ##
@@ -639,7 +639,7 @@ plt.show()
 ```
 
 
-![png](% of Total Rides by City Type.png)
+![png](Total_Rides.png)
 
 
 ## Total Drivers by City Type ##
@@ -670,5 +670,5 @@ plt.show()
 ```
 
 
-![png](% of Total Drivers by City Type.png)
+![png](Total_Drivers.png)
 
