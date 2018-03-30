@@ -168,12 +168,58 @@ ORDER BY COUNT(rental.rental_id) DESC;
 
 -- 7f. Write a query to display how much business, in dollars, each store brought in.
 
+SELECT staff.store_id, SUM(payment.amount)
+FROM payment
+JOIN staff
+ON payment.staff_id = staff.staff_id
+GROUP BY staff.store_id;
+
 -- 7g. Write a query to display for each store its store ID, city, and country.
+
+SELECT store.store_id, city.city, country.country
+FROM store
+JOIN address
+ON store.address_id = address.address_id
+JOIN city
+ON address.city_id = city.city_id
+JOIN country
+ON city.country_id = country.country_id
+GROUP BY store.store_id;
 
 -- 7h. List the top five genres in gross revenue in descending order. (Hint: you may need to use the following tables: category, film_category, inventory, payment, and rental.)
 
+SELECT category.name, SUM(payment.amount)
+FROM category
+JOIN film_category
+ON category.category_id = film_category.category_id
+JOIN inventory
+ON inventory.film_id = film_category.film_id
+JOIN rental
+ON inventory.inventory_id = rental.inventory_id
+JOIN payment
+ON rental.rental_id = payment.rental_id
+GROUP BY category.name
+ORDER BY SUM(payment.amount) DESC LIMIT 5;
+
 -- 8a. In your new role as an executive, you would like to have an easy way of viewing the Top five genres by gross revenue. Use the solution from the problem above to create a view. If you haven't solved 7h, you can substitute another query to create a view.
+
+CREATE VIEW top_five AS SELECT category.name, SUM(payment.amount)
+FROM category
+JOIN film_category
+ON category.category_id = film_category.category_id
+JOIN inventory
+ON inventory.film_id = film_category.film_id
+JOIN rental
+ON inventory.inventory_id = rental.inventory_id
+JOIN payment
+ON rental.rental_id = payment.rental_id
+GROUP BY category.name
+ORDER BY SUM(payment.amount) DESC LIMIT 5;
 
 -- 8b. How would you display the view that you created in 8a?
 
+SELECT * from top_five;
+
 -- 8c. You find that you no longer need the view top_five_genres. Write a query to delete it.
+
+DROP VIEW top_five;
