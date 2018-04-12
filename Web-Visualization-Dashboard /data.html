@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="us-eng">
 <head>
-  <title>Web Visualization Dashboard</title>
+  <title>Data</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -21,7 +21,7 @@
       </button>
       <a class="navbar-brand" href="index.html">Latitude</a>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
+    <div class="collapse navbar-collapse nav navbar-nav navbar-right" id="myNavbar">
       <ul class="nav nav-pills">
         <li role="presentation" class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Plots<span class="caret"></span></a>
@@ -29,20 +29,31 @@
                 <li><a href="cloud_viz.html">Cloudiness (%)</a>
                 <li><a href="humidity_viz.html">Humidity (%)</a>
                 <li><a href="temp_viz.html">Temperature (F)</a></li>
-                <li><a href="wind_viz.html">Windspeed (mph)</a></li>
+                <li><a href="wind_viz.html">Wind Speed (mph)</a></li>
             </ul>
         </li>
-        <li><a href="comparisons.html">Comparison</a></li>
-        <li><a href="data.html">Data</a></li>
+        <li><a class="dropdown-toggle" href="comparisons.html">Comparison</a></li>
+        <li><a class="dropdown-toggle" href="data.html">Data</a></li>
       </ul>
+      <div class="pos-f-t">
+          <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+            </div>
+          </div>
+          <nav class="navbar navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="glyphicon glyphicon-menu-hamburger"></span>
+            </button>
+          </nav>
+      </div>
     </div>
   </div>
 </nav>
 
 <div class="col-md-12 compare">
-        <h1>Data</h1>
+        <h1 class="h1-compare">Data</h1>
         <hr>
-
+        <p>The following table includes all of the data used for plotting during this project.</p>
         <table class="table table-bordered table-hover table-condensed">
         <tbody><tr>
         <td>Lat</td>
@@ -52,7 +63,7 @@
         <td>Temperature (F)</td>
         <td>Humidity (%)</td>
         <td>Cloudiness (%)</td>
-        <td>Windspeed (mph)</td>
+        <td>Wind Speed (mph)</td>
         </tr>
         <tr>
         <td>-29.0</td>
@@ -6956,3 +6967,8 @@
         </tr>
         </tbody></table>
 </div>
+</body>
+<footer class="container-fluid text-center">
+    <a style="color:#f1f1f1" href="https://github.com/abimvas/DataScience/tree/master/Web-Visualization-Dashboard%20">Web Visualization&nbsp;Dashboard</a>
+</footer>
+</html>

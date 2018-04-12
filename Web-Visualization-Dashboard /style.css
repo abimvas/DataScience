@@ -2,6 +2,7 @@
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
+      background-color: #154360;
     }
     
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
@@ -13,37 +14,30 @@
     /* Set gray background color and 100% height */
     .sidenav {
       padding-top: 20px;
-      background-color: #f1f1f1;
+      background-color: #fff;
       height: 100%;
     }
 
     .compare {
         padding: 50px;
-        background-color: #f1f1f1;
         height: 100%;
       }
     
     /* Set black background color, white text and some padding */
-    footer {
+footer {
       background-color: #555;
       color: white;
       padding: 15px;
-    }
-
-    .viz {
-        width: 45%;
-        padding: 5px;
-    }
-
-    .viz_header{
-        text-align: left;
-        padding: 20px;
-        background-color: #f1f1f1;
+      position: fixed;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
     }
 
 .summary{
-    background-color: #f1f1f1;
+    background-color: #fff;
     padding: 20px;
+    color: #154360;
 }
 
 .dropdown{
@@ -56,13 +50,60 @@ h3{
 .table{
     padding: 20px;
 }
+
+.dropdown-toggle{
+    color: #f1f1f1;
+}
+
+.glyphicon-menu-hamburger{
+    color: #f1f1f1;
+    text-align: center;
+}
+
+.pos-f-t{
+    display: none;
+    padding: 0px;
+}
+
+.navbar-brand{
+    color: #f1f1f1;
+}
+
+.compare{
+    background-color: #fff;
+    padding: 20px;
+}
+
+h1{
+    color: #154360;
+}
+
+hr{
+    color: #555;
+}
+
+body{
+    background-color: #f1f1f1;
+}
+
+.col-sm-6{
+    background-color: #fff;
+    padding: 10px;
+}
     
     /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 480px) {
       .sidenav {
         height: auto;
         padding: 15px;
       }
       .row.content {height:auto;} 
+      .dropdown {
+          visibility: hidden;
+      }
+      .navbar-toggler{
+          visibility: visible;
+      }
     }
+
 
